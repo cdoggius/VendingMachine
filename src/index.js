@@ -78,8 +78,11 @@ function MyForm() {
 		else { alert("No more chips in stock!"); }
 		}
 	}
-	
+
+    let total=((+total1)+(+total2)+(+total3)).toFixed(2);
+		
 	var cartDisplay = document.getElementById('cartDisplay')
+	cartText+="<br />Total: $"+total;
 	cartDisplay.innerHTML=cartText;
 	
 	document.getElementById('stockDisplay').innerHTML=soda1.qty+" sodas remaining in stock.<br>";
@@ -88,9 +91,8 @@ function MyForm() {
 
 
 	if ( transText ) {
-        let date = new Date().toJSON();
-		let total=(total1+total2+total3);
-		transText+="/"+total;
+		let date = new Date().toJSON();
+		transText+=total;
 		document.getElementById('transDisplay').innerHTML+=date+": "+transText+"<br />";
 		}
     
